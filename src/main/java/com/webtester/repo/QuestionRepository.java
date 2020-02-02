@@ -24,4 +24,5 @@ public interface QuestionRepository {
     int delete(int id);
 
     int delete(Question question);
+
 }

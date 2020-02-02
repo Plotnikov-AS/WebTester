@@ -6,7 +6,7 @@
         <div>
             ${question.id}
             ${question.question}
-            ${question.answer}
         </div>
     </#list>
+    <a href="/test/1">Start test</a>
 </@p.page>

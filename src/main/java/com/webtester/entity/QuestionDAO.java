@@ -6,6 +6,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -13,7 +14,7 @@ public class QuestionDAO implements QuestionRepository {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public QuestionDAO(JdbcTemplate jdbcTemplate){
+    public QuestionDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -36,7 +37,7 @@ public class QuestionDAO implements QuestionRepository {
     @Override
     public Question save(Question question) {
         if (question != null) {
-            assert  jdbcTemplate.update("insert into tb_question values (?, ?, ?, ?)", question.getId(), question.getQuestion(), question.getAnswer(), question.isSelectable()) > 0;
+            assert jdbcTemplate.update("insert into tb_question values (?, ?, ?, ?)", question.getId(), question.getQuestion(), question.getAnswer(), question.isSelectable()) > 0;
             return findQuestion(question.getId());
         }
         return null;

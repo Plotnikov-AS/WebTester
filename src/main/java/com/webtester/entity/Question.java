@@ -1,13 +1,13 @@
 package com.webtester.entity;
 
 public class Question {
-    int id;
+    private int id;
 
-    String question;
+    private String question;
 
-    String answer;
+    private String answer;
 
-    boolean isSelectable;
+    private boolean isSelectable;
 
     public Question() {
     }
